@@ -14,3 +14,4 @@ Custom Password validation with 6 ways
  * Should not have a space
 
 >Setup.sql file under src/resources
+>You must execute the provided sql file to make security work
