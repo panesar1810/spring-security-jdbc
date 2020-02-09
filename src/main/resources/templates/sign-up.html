@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script async src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script async src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h1>Sign up</h1>
+	<h3 th:if="${passwordIspassword}">Password cannot be 'password'</h3>
+	<h3 th:if="${passwordMismatch}">Both passwords needs to match</h3>
+	<h3 th:if="${userExists}">Username already exists</h3>
+	<h3 th:if="${length}">Length should be between 8 and 20</h3>
+	<h3 th:if="${number}">Should contain at least a number</h3>
+	<h3 th:if="${uppercase}">Should contain at least a uppercase</h3>	
+	<h3 th:if="${lowercase}">Should contain at least a lowercase</h3>	
+	<h3 th:if="${specialCharacter}">Should contain at least a special character</h3>	
+	<h3 th:if="${space}">Should not have a space</h3>		
+
+	<div>
+		<span>Password must have following requirments</span>
+		<ol>
+			<li>Length between 8 and 20</li>
+			<li>At least a number</li>
+			<li>At least a uppercase</li>
+			<li>At least a lowercase</li>
+			<li>At least a special character</li>
+			<li>Should not have a space</li>
+		</ol>
+	</div>
+
+	<div>
+		<form th:action="@{/process/sign-up}" method="POST">
+			<span>Enter username: </span>
+			<input type="text" name="username" placeholder="username"> <br>
+			<span>Enter password: </span>
+			<input type="password" name="password" placeholder="password"> <br>
+			<span>Confirm Password: </span>
+			<input type="password" name="confirmedPassword" placeholder="confirm Password"> <br>
+			<select name="role">
+				<option value="ADMIN">ADMIN</option>
+				<option value="USER">USER</option>
+			</select> <br>
+			<input type="submit" value="sign-up">
+		</form>
+	</div>
+
+	<a href="/">Go home</a>
+</body>
+</html>
