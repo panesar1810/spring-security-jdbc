@@ -4,3 +4,5 @@ Spring Security Application with JDBC authentication
 Role based authentication with 2 roles
   * ADMIN
   * USER
+
+>Setup.sql file under src/resources
