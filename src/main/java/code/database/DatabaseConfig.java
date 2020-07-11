@@ -15,8 +15,8 @@ public class DatabaseConfig {
     protected DataSource datasource() {
         return DataSourceBuilder.create()
         .driverClassName("com.mysql.cj.jdbc.Driver")
-        .url("jdbc:mysql://localhost:3306/security")
-        .username("root").password("MySQL$1810").build(); 
+        .url("jdbc:mysql://us-cdbr-east-02.cleardb.com/heroku_a6cd8e95fe8a3f3")
+        .username("be1a3ff398cd29").password("5ccb85c8").build(); 
     }
 	
     @Bean 
